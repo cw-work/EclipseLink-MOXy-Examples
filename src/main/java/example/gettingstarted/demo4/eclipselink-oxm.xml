@@ -15,7 +15,7 @@
 			<xml-root-element />
 			<java-attributes>
 				<xml-attribute java-attribute="type" />
-				<xml-value java-attribute="number" />
+				<xml-value java-attribute="value" />
 			</java-attributes>
 		</java-type>
 	</java-types>
