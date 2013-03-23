@@ -1,0 +1,49 @@
+{  
+  "name": "1600 Amphitheatre Parkway, Mountain View, CA",  
+  "Status": {    
+      "code": 200,    
+      "request": "geocode"  
+  },  
+  
+  "Placemark": [ 
+    {    
+      "id": "p1",    
+      "address": "1600 Amphitheatre Pkwy, Mountain View, CA 94043, USA",    
+      
+      "AddressDetails": {   
+      		"Accuracy" : 8,      
+       		"Country" : {      
+           		"AdministrativeArea" : {        
+     				"AdministrativeAreaName" : "CA",          
+            		 "Locality" : {            
+            		 	"LocalityName" : "Mountain View",            
+            		 	"PostalCode" : {               
+            		 		"PostalCodeNumber" : "94043"            
+            		 	},            
+            		 	"Thoroughfare" : {               
+            		 		"ThoroughfareName" : "1600 Amphitheatre Pkwy"            
+            		    }         
+            		 }      
+                 },      
+                 "CountryName" : "USA",      
+                 "CountryNameCode" : "US"   
+            }
+      },    
+      
+      "ExtendedData": {      
+      	"LatLonBox": {        
+      		"north": 37.4227454,        
+      		"south": 37.4200474,        
+      		"east": -122.0843863,        
+      		"west": -122.0870843      
+      	}    
+      },    
+      "Point": {      
+      	"coordinates": [ 
+      		-122.0857353, 
+      		37.4213964, 0 
+      	]    
+      }  
+    } 
+  ]
+}

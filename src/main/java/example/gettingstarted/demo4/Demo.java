@@ -17,6 +17,7 @@ import example.gettingstarted.demo1.PhoneNumber;
 
 public class Demo {
 
+    @SuppressWarnings({ "rawtypes", "deprecation" })
     public static void main(String[] args) throws JAXBException {
         // Step 1 - Create the Domain Model
         Customer customer = new Customer();

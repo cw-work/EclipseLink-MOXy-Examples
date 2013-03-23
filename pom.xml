@@ -6,9 +6,12 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<description>to demo serialize with RO mode and deserialize with Writeable mode</description>
 
+	<!-- The parent node is to demonstrate example.json.demo3 <parent> <groupId>com.sun.jersey.samples</groupId> 
+		<artifactId>jersey-samples</artifactId> <version>1.9-ea04</version> </parent> -->
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<eclipselink.version>2.4.0</eclipselink.version>
+		<jersy.version>1.9-ea04</jersy.version>
 	</properties>
 
 	<dependencies>
@@ -31,12 +34,132 @@
 			<version>${eclipselink.version}</version>
 			<scope>compile</scope>
 		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
+	<profiles>
+		<!-- To use this profile, must first build Jersey source with "mvn clean 
+			install -Dcobertura" -->
+		<profile>
+			<id>cobertura</id>
+			<activation>
+				<property>
+					<name>cobertura</name>
+				</property>
+			</activation>
+			<dependencies>
+				<dependency>
+					<groupId>com.sun.jersey</groupId>
+					<artifactId>jersey-grizzly2</artifactId>
+					<version>${project.version}</version>
+					<classifier>cobertura</classifier>
+				</dependency>
+				<dependency>
+					<groupId>com.sun.jersey</groupId>
+					<artifactId>jersey-json</artifactId>
+					<version>${jersy.version}</version>
+					<classifier>cobertura</classifier>
+				</dependency>
+				<dependency>
+					<groupId>com.sun.jersey</groupId>
+					<artifactId>jersey-client</artifactId>
+					<version>${jersy.version}</version>
+					<scope>test</scope>
+					<classifier>cobertura</classifier>
+				</dependency>
+			</dependencies>
+		</profile>
+		<profile>
+			<id>default</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<dependencies>
+				<dependency>
+					<groupId>com.sun.jersey</groupId>
+					<artifactId>jersey-grizzly2</artifactId>
+					<version>${jersy.version}</version>
+				</dependency>
+				<dependency>
+					<groupId>com.sun.jersey</groupId>
+					<artifactId>jersey-json</artifactId>
+					<version>${jersy.version}</version>
+				</dependency>
+				<dependency>
+					<groupId>com.sun.jersey</groupId>
+					<artifactId>jersey-client</artifactId>
+					<version>${jersy.version}</version>
+					<scope>test</scope>
+				</dependency>
+			</dependencies>
+		</profile>
+	</profiles>
+	<build>
+		<plugins>
+			<!-- Maven Exec Plug-In: http://mojo.codehaus.org/exec-maven-plugin/ -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.1</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>java</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<mainClass>com.sun.jersey.samples.jsonfromjaxb.Main</mainClass>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<inherited>true</inherited>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<descriptors>
+						<descriptor>src/main/assembly/src.xml</descriptor>
+					</descriptors>
+				</configuration>
+				<executions>
+					<execution>
+						<id>make-assembly</id> <!-- this is used for inheritance merges -->
+						<phase>package</phase> <!-- append to the packaging phase. -->
+						<goals>
+							<goal>attached</goal> <!-- goals == mojos -->
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 	<repositories>
 		<repository>
 			<id>EclipseLink</id>
 			<url>http://download.eclipse.org/rt/eclipselink/maven.repo</url>
 		</repository>
+		<repository>
+			<id>maven2-repository.dev.java.net</id>
+			<name>java.net/maven/2 repository</name>
+			<url>http://download.java.net/maven/2/</url>
+			<layout>default</layout>
+		</repository>
+		<repository>
+			<id>glassfish-repository.dev.java.net</id>
+			<name>java.net/maven/glassfish repository</name>
+			<url>http://download.java.net/maven/glassfish/</url>
+			<layout>default</layout>
+		</repository>
 	</repositories>
-
 </project>

@@ -1,4 +1,4 @@
-package example.json;
+package example.json.demo1;
 
 import java.io.FileReader;
 import java.util.Date;
@@ -16,17 +16,30 @@ public class Demo {
         Unmarshaller unmarshaller = jc.createUnmarshaller();
         unmarshaller.setProperty("eclipselink.media-type", "application/json");
         unmarshaller.setProperty("eclipselink.json.include-root", false);
-        StreamSource source = new StreamSource(new FileReader("src/main/java/example/json/response.json"));
+        
+        StreamSource source = new StreamSource(new FileReader("src/main/java/example/json/demo1/response.json"));
+        
         JAXBElement<SearchResults> jaxbElement = unmarshaller.unmarshal(source, SearchResults.class);
+        
         Result result = new Result();
         result.setCreatedAt(new Date());
         result.setFromUser("bsmith");
         result.setText("You can now use EclipseLink JAXB (MOXy) with JSON :)");
         jaxbElement.getValue().getResults().add(result);
+        
         Marshaller marshaller = jc.createMarshaller();
         marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
         marshaller.setProperty("eclipselink.media-type", "application/json");
         marshaller.setProperty("eclipselink.json.include-root", false);
         marshaller.marshal(jaxbElement, System.out);
+        
+        System.out.println();
+        
+        marshaller = jc.createMarshaller();
+        marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+        marshaller.setProperty("eclipselink.media-type", "application/xml");
+        marshaller.setProperty("eclipselink.json.include-root", false);
+        marshaller.marshal(jaxbElement, System.out);
+        
     }
 }

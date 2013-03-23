@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+	<Response>
+		<name>1600 Amphitheatre Parkway, Mountain View, CA</name>
+		<Status>
+			<code>200</code>
+			<request>geocode</request>
+		</Status>
+		<Placemark id="p1">
+			<address>1600 Amphitheatre Pkwy, Mountain View, CA 94043, USA
+			</address>
+			<AddressDetails Accuracy="8"
+				xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+				<Country>
+					<CountryNameCode>US</CountryNameCode>
+					<CountryName>USA</CountryName>
+					<AdministrativeArea>
+						<AdministrativeAreaName>CA</AdministrativeAreaName>
+						<Locality>
+							<LocalityName>Mountain View</LocalityName>
+							<Thoroughfare>
+								<ThoroughfareName>1600 Amphitheatre Pkwy</ThoroughfareName>
+							</Thoroughfare>
+							<PostalCode>
+								<PostalCodeNumber>94043</PostalCodeNumber>
+							</PostalCode>
+						</Locality>
+					</AdministrativeArea>
+				</Country>
+			</AddressDetails>
+			<ExtendedData>
+				<LatLonBox north="37.4227454" south="37.4200474" east="-122.0843863"
+					west="-122.0870843" />
+			</ExtendedData>
+			<Point>
+				<coordinates>-122.0857353,37.4213964,0</coordinates>
+			</Point>
+		</Placemark>
+	</Response>
+</kml>

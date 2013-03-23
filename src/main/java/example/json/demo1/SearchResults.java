@@ -1,4 +1,4 @@
-package example.json;
+package example.json.demo1;
 
 import java.util.List;
 
