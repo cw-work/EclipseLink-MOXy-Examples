@@ -10,7 +10,7 @@
 		<artifactId>jersey-samples</artifactId> <version>1.9-ea04</version> </parent> -->
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<eclipselink.version>2.4.0</eclipselink.version>
+		<eclipselink.version>2.4.1</eclipselink.version>
 		<jersy.version>1.9-ea04</jersy.version>
 	</properties>
 
