@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<xml-bindings xmlns="http://www.eclipse.org/eclipselink/xsds/persistence/oxm"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.eclipse.org/eclipselink/xsds/persistence/oxm http://www.eclipse.org/eclipselink/xsds/eclipselink_oxm_2_4.xsd"
+	version="2.1" package-name="net.madz.db.core.meta.immutable.mysql"
+	xml-mapping-metadata-complete="true">
+	<java-types>
+		<java-type name="net.madz.db.core.meta.immutable.mysql.MySQLSchemaMetaData">
+			<xml-root-element name="mysql-schema-meta-data" />
+			<xml-type prop-order="charSet collation" />
+			<java-attributes>
+				<xml-element java-attribute="charSet" name="character-set" />
+				<xml-element java-attribute="collation" name="collation-name" />
+			</java-attributes>
+		</java-type>
+		<java-type name="net.madz.db.core.meta.immutable.mysql.MySQLTableMetaData">
+			<java-attributes>
+			</java-attributes>
+		</java-type>
+		<java-type name="net.madz.db.core.meta.immutable.mysql.MySQLColumnMetaData">
+			<java-attributes>
+			</java-attributes>
+		</java-type>
+		<java-type name="net.madz.db.core.meta.immutable.mysql.MySQLIndexMetaData">
+			<java-attributes>
+			</java-attributes>
+		</java-type>
+		<java-type
+			name="net.madz.db.core.meta.immutable.mysql.MySQLForeignKeyMetaData">
+			<java-attributes>
+			</java-attributes>
+		</java-type>
+	</java-types>
+</xml-bindings>

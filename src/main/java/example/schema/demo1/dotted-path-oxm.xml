@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<xml-bindings xmlns="http://www.eclipse.org/eclipselink/xsds/persistence/oxm"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.eclipse.org/eclipselink/xsds/persistence/oxm http://www.eclipse.org/eclipselink/xsds/eclipselink_oxm_2_4.xsd"
+
+	version="2.1" package-name="net.madz.db.core.meta"
+	xml-mapping-metadata-complete="true">
+	<java-types>
+		<java-type name="net.madz.db.core.meta.DottedPath"
+			xml-accessor-type="PUBLIC_MEMBER">
+			<xml-type prop-order="absoluteName" />
+			<java-attributes>
+				<xml-attribute java-attribute="absoluteName" name="dotted-path" xml-path="@path"/>
+			</java-attributes>
+		</java-type>
+	</java-types>
+</xml-bindings>

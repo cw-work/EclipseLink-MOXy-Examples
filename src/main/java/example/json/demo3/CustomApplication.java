@@ -12,6 +12,7 @@ import org.eclipse.persistence.jaxb.rs.MOXyJsonProvider;
 import example.json.demo3.config.CustomProvider;
 import example.json.demo3.resources.AircraftTypeList;
 import example.json.demo3.resources.FlightList;
+import example.json.demo3.resources.MySQLSchemaMetaDataList;
 
 public class CustomApplication extends Application {
 
@@ -22,6 +23,7 @@ public class CustomApplication extends Application {
         set.add(CustomProvider.class);
         set.add(AircraftTypeList.class);
         set.add(FlightList.class);
+        set.add(MySQLSchemaMetaDataList.class);
         return set;
     }
     

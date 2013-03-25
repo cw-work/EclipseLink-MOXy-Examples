@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<xml-bindings xmlns="http://www.eclipse.org/eclipselink/xsds/persistence/oxm"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.eclipse.org/eclipselink/xsds/persistence/oxm http://www.eclipse.org/eclipselink/xsds/eclipselink_oxm_2_4.xsd"
+	version="2.1" package-name="net.madz.db.core.meta.immutable"
+	xml-mapping-metadata-complete="true">
+	<java-types>
+		<java-type name="net.madz.db.core.meta.immutable.SchemaMetaData"
+			xml-accessor-type="PUBLIC_MEMBER">
+			<xml-root-element />
+			<xml-type prop-order="schemaPath tables" />
+			<java-attributes>
+				<xml-element java-attribute="schemaPath" xml-id="true" />
+				<xml-element java-attribute="tables" xml-path="tables/table" />
+			</java-attributes>
+		</java-type>
+		<java-type name="net.madz.db.core.meta.immutable.TableMetaData">
+			<!-- <xml-type prop-order="name type selfReferencingColumnName refGeneration 
+				comments table-path columns indexes path foreignKeys" /> -->
+			<java-attributes>
+				<xml-attribute java-attribute="tableName" name="name"
+					xml-id="true" />
+				<xml-attribute java-attribute="type" name="type" />
+				<xml-attribute java-attribute="idCol"
+					name="selfReferencingColumnName" />
+				<xml-attribute java-attribute="idGeneration" name="refGeneration" />
+				<xml-attribute java-attribute="remarks" name="comments" />
+				<xml-element java-attribute="tablePath" name="table-path" />
+				<xml-element java-attribute="columns" name="columns"
+					xml-path="columns/column" />
+				<xml-element java-attribute="indexSet" name="indexes"
+					xml-path="indexes/index" />
+				<xml-element java-attribute="foreignKeySet" name="foreignKeys"
+					xml-path="foreignKeys/foreignKey" />
+				<xml-element java-attribute="tablePath" name="path" />
+
+			</java-attributes>
+		</java-type>
+		<java-type name="net.madz.db.core.meta.immutable.ColumnMetaData">
+			<java-attributes>
+				<xml-attribute java-attribute="columnName" name="name"
+					xml-id="true" />
+				<xml-attribute java-attribute="sqlTypeName" name="sqlTypeName" />
+				<xml-attribute java-attribute="size" name="columnSize" />
+				<xml-attribute java-attribute="radix" name="radix" />
+				<xml-attribute java-attribute="defaultValue" name="defaultValue" />
+				<xml-attribute java-attribute="characterOctetLength"
+					name="characterOctetLength" />
+				<xml-attribute java-attribute="ordinalPosition" name="ordinalPosition" />
+				<xml-attribute java-attribute="nullable" name="nullable" />
+				<xml-attribute java-attribute="autoIncremented" name="autoIncremental" />
+				<xml-attribute java-attribute="memberOfPrimaryKey"
+					name="memberOfPrimaryKey" />
+				<xml-attribute java-attribute="memberOfIndex" name="memberOfIndex" />
+				<xml-attribute java-attribute="remarks" name="comments" />
+				<xml-element java-attribute="columnPath" name="column-path" />
+			</java-attributes>
+		</java-type>
+		<java-type name="net.madz.db.core.meta.immutable.IndexMetaData">
+			<java-attributes>
+				<xml-attribute java-attribute="indexName" name="name"
+					xml-id="true" />
+				<xml-attribute java-attribute="unique" name="unique" />
+				<xml-attribute java-attribute="keyType" name="keyType" />
+				<xml-attribute java-attribute="indexType" name="indexType" />
+				<xml-attribute java-attribute="sortDirection" name="sortDirection" />
+				<xml-attribute java-attribute="cardinality" name="cardinality" />
+				<xml-attribute java-attribute="pageCount" name="pageCount" />
+				<xml-element java-attribute="entrySet" name="entries"
+					xml-path="entries/entry" />
+			</java-attributes>
+		</java-type>
+		<java-type name="net.madz.db.core.meta.immutable.ForeignKeyMetaData">
+			<java-attributes>
+				<xml-attribute java-attribute="foreignKeyName" name="name" />
+				<xml-attribute java-attribute="foreignKeyIndexName"
+					name="fkIndex" />
+				<xml-attribute java-attribute="foreignKeyTableName"
+					name="fkTable" />
+				<xml-attribute java-attribute="primaryKeyIndexName"
+					name="pkIndex" />
+				<xml-attribute java-attribute="primaryKeyTableName"
+					name="pkTable" />
+				<xml-attribute java-attribute="deleteCascadeRule"
+					name="deleteCascadeRule" />
+				<xml-attribute java-attribute="updateCascadeRule"
+					name="updateCascadeRule" />
+				<xml-attribute java-attribute="KkyDeferrability" name="keyDeferrability" />
+				<xml-attribute java-attribute="size" name="size" />
+				<xml-element java-attribute="entrySet" name="entries"
+					xml-path="entries/entry" />
+			</java-attributes>
+		</java-type>
+		<java-type name="net.madz.db.core.meta.immutable.IndexEntry">
+			<java-attributes>
+				<xml-attribute java-attribute="columnName" name="columnName" />
+				<xml-attribute java-attribute="position" name="position" />
+				<xml-attribute java-attribute="null" name="null" />
+				<xml-attribute java-attribute="subPart" name="subPart" />
+			</java-attributes>
+		</java-type>
+		<java-type name="net.madz.db.core.meta.immutable.ForeignKeyEntry">
+			<java-attributes>
+				<xml-attribute java-attribute="foreignKeyColumnName"
+					name="foreignKeyColumnName" />
+				<xml-attribute java-attribute="primaryKeyColumnName"
+					name="primaryKeyColumnName" />
+				<xml-attribute java-attribute="seq" name="position" />
+			</java-attributes>
+		</java-type>
+	</java-types>
+</xml-bindings>
