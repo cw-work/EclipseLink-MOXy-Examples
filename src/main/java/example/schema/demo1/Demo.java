@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Map;
 
 import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.transform.Source;
@@ -20,14 +19,12 @@ import net.madz.db.core.meta.immutable.mysql.MySQLSchemaMetaData;
 
 import org.eclipse.persistence.jaxb.JAXBContextFactory;
 
-import example.json.demo2.Address;
-
 public class Demo {
 
     @SuppressWarnings("rawtypes")
     public static void main(String[] args) throws SQLException, JAXBException {
         // Step 1 - Create the Domain Model
-        final AbsSchemaMetaDataParser sourceDbParser = DbOperatorFactoryImpl.getInstance().createSchemaParser("fortest", false);
+        final AbsSchemaMetaDataParser sourceDbParser = DbOperatorFactoryImpl.getInstance().createSchemaParser("zbilling", false);
         final SchemaMetaData schemaMetaData = sourceDbParser.parseSchemaMetaData();
         // Step 2 - Convert the Domain Model to XML
         // final Map<String, Source> metadataSourceMap = new HashMap<String,

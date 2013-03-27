@@ -13,13 +13,15 @@
 			<xml-root-element />
 			<xml-type namespace="http://www.example.org/customer"
 				prop-order="name address phoneNumbers" />
-
+			<xml-properties>
+				<xml-property name="hello" value="false" value-type="java.lang.String" />
+				<xml-property name="world" value="this is an element"
+					value-type="java.lang.String" />
+			</xml-properties>
 			<java-attributes>
-				<!-- 
-				<xml-element java-attribute="name" xml-path="personal-info/name/text()" /> 
-				-->
 				<xml-attribute java-attribute="name" xml-path="@name" />
-				<xml-element java-attribute="address" xml-path="contact-info/address" />
+				<xml-element java-attribute="address">
+				</xml-element>
 				<xml-element java-attribute="phoneNumbers" xml-path="contact-info/phone-number" />
 			</java-attributes>
 		</java-type>
@@ -32,12 +34,6 @@
 			</java-attributes>
 		</java-type>
 		<java-type name="example.gettingstarted.demo1.Address">
-			<xml-root-element />
-			<xml-type namespace="http://www.example.org/addr"></xml-type>
-			<java-attributes>
-				<xml-attribute java-attribute="street" />
-				<xml-value java-attribute="city" />
-			</java-attributes>
 		</java-type>
 	</java-types>
 </xml-bindings>
