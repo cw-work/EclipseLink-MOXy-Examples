@@ -2,30 +2,17 @@ package example.schema.demo1;
 
 import java.sql.SQLException;
 
-<<<<<<< HEAD
-import javax.xml.bind.JAXBContext;
-=======
->>>>>>> add samples about XmlID, XmlIDREF, XmlInverseReference
 import javax.xml.bind.JAXBException;
 
 import net.madz.db.core.AbsSchemaMetaDataParser;
 import net.madz.db.core.impl.DbOperatorFactoryImpl;
 import net.madz.db.core.meta.immutable.SchemaMetaData;
-<<<<<<< HEAD
-import net.madz.db.core.meta.immutable.mysql.MySQLSchemaMetaData;
-
-import org.eclipse.persistence.jaxb.JAXBContextFactory;
-=======
->>>>>>> add samples about XmlID, XmlIDREF, XmlInverseReference
 
 public class Demo {
 
     @SuppressWarnings("rawtypes")
     public static void main(String[] args) throws SQLException, JAXBException {
         // Step 1 - Create the Domain Model
-<<<<<<< HEAD
-        final AbsSchemaMetaDataParser sourceDbParser = DbOperatorFactoryImpl.getInstance().createSchemaParser("zbilling", false);
-=======
         final AbsSchemaMetaDataParser sourceDbParser = DbOperatorFactoryImpl.getInstance().createSchemaParser("fortest", false);
         
         final long start = System.currentTimeMillis();
@@ -35,7 +22,6 @@ public class Demo {
         final long end = System.currentTimeMillis();
         long cost = (end - start);
         System.out.println("total cost : " +  cost + ", each costs: " + (cost / 10));
->>>>>>> add samples about XmlID, XmlIDREF, XmlInverseReference
         final SchemaMetaData schemaMetaData = sourceDbParser.parseSchemaMetaData();
         // Step 2 - Convert the Domain Model to XML
         // final Map<String, Source> metadataSourceMap = new HashMap<String,
