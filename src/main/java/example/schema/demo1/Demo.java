@@ -1,30 +1,41 @@
 package example.schema.demo1;
 
 import java.sql.SQLException;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
 
+<<<<<<< HEAD
 import javax.xml.bind.JAXBContext;
+=======
+>>>>>>> add samples about XmlID, XmlIDREF, XmlInverseReference
 import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
-import javax.xml.transform.Source;
-import javax.xml.transform.stream.StreamSource;
 
 import net.madz.db.core.AbsSchemaMetaDataParser;
 import net.madz.db.core.impl.DbOperatorFactoryImpl;
 import net.madz.db.core.meta.immutable.SchemaMetaData;
+<<<<<<< HEAD
 import net.madz.db.core.meta.immutable.mysql.MySQLSchemaMetaData;
 
 import org.eclipse.persistence.jaxb.JAXBContextFactory;
+=======
+>>>>>>> add samples about XmlID, XmlIDREF, XmlInverseReference
 
 public class Demo {
 
     @SuppressWarnings("rawtypes")
     public static void main(String[] args) throws SQLException, JAXBException {
         // Step 1 - Create the Domain Model
+<<<<<<< HEAD
         final AbsSchemaMetaDataParser sourceDbParser = DbOperatorFactoryImpl.getInstance().createSchemaParser("zbilling", false);
+=======
+        final AbsSchemaMetaDataParser sourceDbParser = DbOperatorFactoryImpl.getInstance().createSchemaParser("fortest", false);
+        
+        final long start = System.currentTimeMillis();
+        for (int i = 0; i < 10 ; i++) {
+            sourceDbParser.parseSchemaMetaData();
+        }
+        final long end = System.currentTimeMillis();
+        long cost = (end - start);
+        System.out.println("total cost : " +  cost + ", each costs: " + (cost / 10));
+>>>>>>> add samples about XmlID, XmlIDREF, XmlInverseReference
         final SchemaMetaData schemaMetaData = sourceDbParser.parseSchemaMetaData();
         // Step 2 - Convert the Domain Model to XML
         // final Map<String, Source> metadataSourceMap = new HashMap<String,
@@ -35,6 +46,7 @@ public class Demo {
         // StreamSource("./example/schema/demo1/dotted-path-oxm.xml"));
         // metadataSourceMap.put("net.madz.db.core.meta.immutable", new
         // StreamSource("./example/schema/demo1/schema-oxm.xml"));
+        /*
         final List<Source> metadataSourceList = new LinkedList<Source>();
         metadataSourceList.add(new StreamSource("./example/schema/demo1/dotted-path-oxm.xml"));
         metadataSourceList.add(new StreamSource("./example/schema/demo1/schema-oxm.xml"));
@@ -52,5 +64,6 @@ public class Demo {
         marshaller.setProperty("eclipselink.media-type", "application/json");
         marshaller.setProperty("eclipselink.json.include-root", false);
         marshaller.marshal((MySQLSchemaMetaData) schemaMetaData, System.out);
+        */
     }
 }
