@@ -1,4 +1,4 @@
-package example.gettingstarted.demo6;
+package example.gettingstarted.demo7;
 
 <<<<<<< HEAD
 import java.util.HashMap;

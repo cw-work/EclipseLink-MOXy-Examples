@@ -1,4 +1,4 @@
-package example.gettingstarted.demo6;
+package example.gettingstarted.demo8;
 
 import org.eclipse.persistence.oxm.annotations.XmlInverseReference;
 
