@@ -4,25 +4,25 @@ import java.sql.SQLException;
 
 import javax.xml.bind.JAXBException;
 
-import net.madz.db.core.AbsSchemaMetaDataParser;
-import net.madz.db.core.impl.DbOperatorFactoryImpl;
-import net.madz.db.core.meta.immutable.SchemaMetaData;
+//import net.madz.db.core.AbsSchemaMetaDataParser;
+//import net.madz.db.core.impl.DbOperatorFactoryImpl;
+//import net.madz.db.core.meta.immutable.SchemaMetaData;
 
 public class Demo {
 
     @SuppressWarnings("rawtypes")
     public static void main(String[] args) throws SQLException, JAXBException {
         // Step 1 - Create the Domain Model
-        final AbsSchemaMetaDataParser sourceDbParser = DbOperatorFactoryImpl.getInstance().createSchemaParser("fortest", false);
+        //final AbsSchemaMetaDataParser sourceDbParser = DbOperatorFactoryImpl.getInstance().createSchemaParser("fortest", false);
         
         final long start = System.currentTimeMillis();
         for (int i = 0; i < 10 ; i++) {
-            sourceDbParser.parseSchemaMetaData();
+          //  sourceDbParser.parseSchemaMetaData();
         }
         final long end = System.currentTimeMillis();
         long cost = (end - start);
         System.out.println("total cost : " +  cost + ", each costs: " + (cost / 10));
-        final SchemaMetaData schemaMetaData = sourceDbParser.parseSchemaMetaData();
+        //final SchemaMetaData schemaMetaData = sourceDbParser.parseSchemaMetaData();
         // Step 2 - Convert the Domain Model to XML
         // final Map<String, Source> metadataSourceMap = new HashMap<String,
         // Source>();

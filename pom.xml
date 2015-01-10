@@ -10,7 +10,7 @@
 		<artifactId>jersey-samples</artifactId> <version>1.9-ea04</version> </parent> -->
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<eclipselink.version>2.4.1</eclipselink.version>
+		<eclipselink.version>2.6.0-M3</eclipselink.version>
 		<jersy.version>1.9-ea04</jersy.version>
 	</properties>
 
@@ -20,7 +20,12 @@
 			<artifactId>jaxb-api</artifactId>
 			<version>2.1</version>
 		</dependency>
-		<!-- <dependency> <groupId>org.eclipse.persistence</groupId> <artifactId>org.eclipse.persistence.moxy</artifactId> 
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>1.1.0.Final</version>
+		</dependency>
+		<!-- <dependency> <groupId>org.eclipse.persistence</groupId> <artifactId>org.eclipse.persistence.moxy</artifactId>
 			<version>${eclipselink.version}</version> <scope>compile</scope> </dependency> -->
 		<dependency>
 			<groupId>com.sun.xml.bind</groupId>
@@ -40,12 +45,14 @@
 			<version>4.11</version>
 			<scope>test</scope>
 		</dependency>
+		<!--
 		<dependency>
 			<groupId>net.madz</groupId>
 			<artifactId>Madz.DatabaseMetaData</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<scope>runtime</scope>
 		</dependency>
+		-->
 	</dependencies>
 	<profiles>
 		<!-- To use this profile, must first build Jersey source with "mvn clean 
@@ -61,7 +68,7 @@
 				<dependency>
 					<groupId>com.sun.jersey</groupId>
 					<artifactId>jersey-grizzly2</artifactId>
-					<version>${project.version}</version>
+					<version>${jersy.version}</version>
 					<classifier>cobertura</classifier>
 				</dependency>
 				<dependency>

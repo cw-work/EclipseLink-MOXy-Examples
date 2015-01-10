@@ -20,7 +20,7 @@ import javax.xml.bind.Unmarshaller;
 import javax.xml.transform.Source;
 import javax.xml.transform.stream.StreamSource;
 
-import net.madz.db.core.meta.immutable.mysql.MySQLSchemaMetaData;
+//import net.madz.db.core.meta.immutable.mysql.MySQLSchemaMetaData;
 
 import org.eclipse.persistence.jaxb.JAXBContextFactory;
 import org.eclipse.persistence.jaxb.MarshallerProperties;
@@ -33,7 +33,7 @@ public class CustomProvider extends MOXyJsonProvider {
 
     @Override
     public boolean isReadable(Class<?> type, Type genericType, Annotation[] annotations, MediaType mediaType) {
-        return getDomainClass(genericType) == MySQLSchemaMetaData.class;
+        return false;//getDomainClass(genericType) == MySQLSchemaMetaData.class;
     }
 
     @Override
@@ -60,7 +60,7 @@ public class CustomProvider extends MOXyJsonProvider {
             final Map<String, Object> properties = new HashMap<String, Object>();
             properties.put(JAXBContextFactory.ECLIPSELINK_OXM_XML_KEY, metadataSourceList);
             final Class[] classes = new Class[1];
-            classes[0] = MySQLSchemaMetaData.class;
+            //classes[0] = MySQLSchemaMetaData.class;
             jaxbContext = (JAXBContext) JAXBContext.newInstance(classes, properties);
             return jaxbContext;
         } else if ( jaxbContext instanceof org.eclipse.persistence.jaxb.JAXBContext ) {
